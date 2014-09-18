@@ -66,6 +66,3 @@ for iter=1:max_iter
     ul=un; % last u = this u: $u^{(n-1)}=u^{(n)}$
 
 end
-
-%!end (3)
-

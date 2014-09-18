@@ -1,66 +1,76 @@
-<h2 class="pz_section" id="introduction">
-Introduction    
-</h2>
+<div class="text">
 
-Various computational aspects of the paper below are reproduced---both
-to substantiate the results and make them easier to reuse.
+  <h2 class="pz_section" id="introduction"> Introduction </h2>
 
-<!--puzlet_end--> (1)
+  Various computational aspects of the paper below are
+  reproduced---both to substantiate the results and make them easier
+  to reuse.
 
-<h2 class="pz_section" id="citation">
-Citation    
-</h2>
+  <h2 class="pz_section" id="citation"> Citation</h2>
 
-Chartrand, R., Wotao Yin, 
-[http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=4518498
-&isnumber=4517521, "Iteratively reweighted algorithms for compressive 
-sensing]", IEEE International Conference on Acoustics, Speech and Signal 
-Processing, 2008, ICASSP 2008, pp.3869-3872, March 31 2008-April 4 2008.
-([http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.154.8360,
-citeseerx])
+  Chartrand, R., Wotao Yin,
+  [http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=4518498
+  &isnumber=4517521, "Iteratively reweighted algorithms for
+  compressive sensing]", IEEE International Conference on Acoustics,
+  Speech and Signal Processing, 2008, ICASSP 2008, pp.3869-3872, March
+  31 2008-April 4 2008.
+  ([http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.154.8360,
+  citeseerx])
 
-<!--puzlet_end--> (7)
+  <h2 class="pz_section" id="section_2">
+    "2. Algorithms for Nonconvex Compressive Sensing" 
+  </h2>
+  
+  Code for the paper's <span class="pz_text" ref="stackoverflow_note">
+    main algorithm</span> is given here for both Octave and Python.
 
-<h2 class="pz_section" id="section_2">
-"2. Algorithms for Nonconvex Compressive Sensing" 
-</h2>
-
-Code for the paper's <span class="pz_text" ref="stackoverflow_note">
-main algorithm</span> is given here for both Octave and
-Python.
-
-<h3 class="pz_section" id="section_2">
-Summary 
+  <h3 class="pz_section" id="section_2">
+    Summary 
 </h3>
 
 
-Essentially we iteratively solve a constrained linear least squares 
-(LS) problem for which the weights for the present step, $w_i$, depend 
-on the solution from previous step, $u_i^{(n-1)}$:
+  Essentially we iteratively solve a constrained linear least squares
+  (LS) problem for which the weights for the present step, $w_i$,
+  depend on the solution from previous step, $u_i^{(n-1)}$:
 
-$$w_i=\left( \left(u_i^{(n-1)}\right)^2+\epsilon \right)^{p/2-1} \tag{6}$$
+  $$w_i=\left( \left(u_i^{(n-1)}\right)^2+\epsilon \right)^{p/2-1}
+  \tag{6}$$
 
-For the LS solution, let $Q_n=\mathrm{diag}(1/w_i)$, so that
+  For the LS solution, let $Q_n=\mathrm{diag}(1/w_i)$, so that
 
-$$u^{(n)}=Q_n \Phi^T \left( \Phi Q_n \Phi^T \right)^{-1}b \tag{5}$$
+  $$u^{(n)}=Q_n \Phi^T \left( \Phi Q_n \Phi^T \right)^{-1}b \tag{5}$$
 
-The iteration is initialized with $$\Phi u_0 = b$$.
+  The iteration is initialized with 
 
-<div class="pz_note" id="stackoverflow_note">
-A nod to "eat" on [http://stackoverflow.com/a/7090478,stackoverflow]. 
+  $$\Phi u_0 = b$$
+
+  <div class="pz_note" id="stackoverflow_note">
+    A nod to "eat" on [http://stackoverflow.com/a/7090478,stackoverflow]. 
+  </div>
+
+  <h3 class="pz_section" id="octave">
+    Octave 
+  </h3>
+
+  <div data-file="./m/irls.m" 
+       data-start-match=""
+       data-end-match="">
+  </div>
+
+  <div data-file="./m/irls_test.m" 
+       data-start-match=""
+       data-end-match="">
+  </div>
+
+  <<pre id="irls-m"></pre>
+
+  <h3 class="pz_section" id="python"> Python </h3>
+  
+  <div data-file="./py/irls.py" 
+       data-start-match=""
+       data-end-match="">
+  </div>
+
+  <pre id="irls-py"></pre>
+
 </div>
-
-<!--puzlet_end--> (4)
-
-<h3 class="pz_section" id="octave">
-Octave 
-</h3>
-
-<!--puzlet_end--> (8)
-
-<h3 class="pz_section" id="python">
-Python 
-</h3>
-
-<!--puzlet_end--> (9)
-

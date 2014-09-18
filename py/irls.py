@@ -1,5 +1,3 @@
-#!puzlet
-
 import numpy as np
 import numpy.linalg as la
 import time
@@ -54,16 +52,14 @@ def solve(Phi,b,p=0,thresh=0.1,max_eps=1e-8,max_iter=200,eps_scale=10,
         ul = un # last u = this u: $u^{(n-1)}=u^{(n)}$
         
     return un,iter
-    
 
 if __name__=="__main__":
 
     A=np.array([[1,0,1],[1+1j,3,0]])
     b=np.array([[1],[1+1j]])
     x,k=solve(A,b)
-    
+
+    import sys
+    sys.stdout = open('irls-py.txt', 'w')
     print "x: %s"%x
     print "k: %s"%k
-
-#!end (6)
-
